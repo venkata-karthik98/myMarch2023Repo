@@ -5,6 +5,7 @@
 <body>
 <h2> We are implementing CICD  using Jenkins Declarative Pipelines. Automation is really fun!! </h2>
 https://github.com/venkata-karthik98/myJan2021Repo
-changed some code over here for continous integration
+<br/>
+changed some code over here for continous integration via pipeline build triggers
 </body>
 </html>
