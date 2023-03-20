@@ -1,42 +1,31 @@
-package com.dev3l.hello_world.test;
-
-import static org.junit.Assert.*;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Scanner;
-
-import org.junit.Test;
+package junit;
+import static org.junit.Assert.assertTrue;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.*;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-
-public class ExampleTest {
-	
-	
-	 @Test
-		public void testWebPageAgain() throws IOException {
-		    // Read the content of the JSP file
-		    String filePath = "src/main/webapp/index.jsp"; // replace with the actual file path
-		    BufferedReader reader = new BufferedReader(new FileReader(filePath));
-		    StringBuilder builder = new StringBuilder();
-		    String line;
-		    while ((line = reader.readLine()) != null) {
-			builder.append(line);
-		    }
-		    reader.close();
-		    String content = builder.toString();
-
-		    // Check for the title, header, body, and image tags
-		    assertTrue(content.contains("<title>Hello World! First Java Pipeline</title>"));
-		    assertTrue(content.contains("<h2 class=\"text-center\">Hello World! First Java Pipeline V0.2</h2>"));
-		    assertTrue(content.contains("<p class=\"text-center\">Now with CS K-CI-CD!New Change</p>"));
-		    assertTrue(content.contains("<img src=\"https://octodex.github.com/images/spidertocat.png\" alt=\"Spidertocat\""));
-		}
-	
-
+import org.junit.BeforeClass;
+import org.junit.Test;
+public class JUnitHelloWorldTest {
+	@BeforeClass
+	public static void beforeClass() {
+		System.out.println("Before Class");
+	}
+	@Before
+	public void before() {
+		System.out.println("Before Test Case");
+	}
+	@Test
+	public void isGreaterTest() {
+		System.out.println("Test");
+		JUnitHelloWorld helloWorld = new JUnitHelloWorld();
+		assertTrue("Num 1 is greater than Num 2", helloWorld.isGreater(4, 3));
+	}
+	@After
+	public void after() {
+		System.out.println("After Test Case");
+	}
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("After Class");
+	}
 }
