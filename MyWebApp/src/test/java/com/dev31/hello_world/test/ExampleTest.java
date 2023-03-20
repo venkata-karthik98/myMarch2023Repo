@@ -5,6 +5,14 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+public class JUnitHelloWorld {
+ 
+    public boolean isGreater(int num1, int num2){
+        return num1 > num2;
+    }
+}
+
 public class JUnitHelloWorldTest {
 	@BeforeClass
 	public static void beforeClass() {
